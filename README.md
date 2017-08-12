@@ -40,7 +40,8 @@ which returns the data in the request body of the AJAX request.
  webView.setWebViewClient(new WriteHandlingWebViewClient() {
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WriteHandlingWebResourceRequest request) {
-         // works the same as WebViewClient.shouldOverrideUrlLoading, but you have request.getAjaxData() which gives you the 
+         // works the same as WebViewClient.shouldOverrideUrlLoading, 
+         // but you have request.getAjaxData() which gives you the 
          // request body
          return WebResourceResponse(...) or return false or return true
     }
