@@ -32,7 +32,7 @@ public class WriteHandlingWebViewClient extends WebViewClient {
     }
 
     @Override
-    public WebResourceResponse shouldInterceptRequest(
+    public final WebResourceResponse shouldInterceptRequest(
             final WebView view,
             WebResourceRequest request
     ) {
