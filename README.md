@@ -8,7 +8,7 @@ This project is inspired by https://github.com/KeejOow/android-post-webview and 
 When you need to display a webview to the user on which you need to intercept the HTTP calls and perform them yourself (for example to add additional security), you can do so on Android by registering a `WebViewClient` and implementing 
 
 ```
-android.webkit.WebViewClient#shouldInterceptRequest(android.webkit.WebView webview, WebResourceRequest request)
+WebResourceResponse shouldInterceptRequest(android.webkit.WebView webview, WebResourceRequest request)
 ```
 
 Unfortunately, the `request object passed to this method` does not contain any POST data, wich is needed when proxying the request.
@@ -17,7 +17,7 @@ This project provides a hack around this limitation by injecting into the HTML t
 
 It provides the `WriteHandlingWebViewClient` class that extends `WebViewClient` and provides the 
 ```
-public WebResourceResponse shouldInterceptRequest(final WebView view, WriteHandlingWebResourceRequest request)
+WebResourceResponse shouldInterceptRequest(final WebView view, WriteHandlingWebResourceRequest request)
 ```
 method to override.
 
