@@ -5,11 +5,11 @@ import android.webkit.WebResourceRequest;
 import java.util.Map;
 
 public class WriteHandlingWebResourceRequest implements WebResourceRequest {
-    final Uri uri;
-    final WebResourceRequest originalWebResourceRequest;
-    final String requestBody;
+    final private Uri uri;
+    final private WebResourceRequest originalWebResourceRequest;
+    final private String requestBody;
 
-    public WriteHandlingWebResourceRequest(
+    WriteHandlingWebResourceRequest(
             WebResourceRequest originalWebResourceRequest,
             String requestBody,
             Uri uri
