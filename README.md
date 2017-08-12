@@ -47,3 +47,7 @@ which returns the data in the request body of the AJAX request.
     }
 });
 ```
+
+# What about other forms?
+
+The library can probably be extended to work for forms too. In fact, https://github.com/KeejOow/android-post-webview shows how it's done. However, I wasn't happy with my adaption of this, so I postponed it.
