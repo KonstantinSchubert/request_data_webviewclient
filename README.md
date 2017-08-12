@@ -31,5 +31,23 @@ which returns the data in the request body of the AJAX request.
 # Installation
 
  * Add the `writeinterceptingwebview` folder as a libarary module to your android project. 
- * (jCenter/Maven package is in the works)
+ * jCenter-Maven package will come as soon as I figure out how to do that ... Say what you want about pip, at least it's easy to upload a package.
  
+ 
+ # Example usage 
+ 
+ ```
+ webView.setWebViewClient(new WriteHandlingWebViewClient() {
+    @Override
+    public boolean shouldOverrideUrlLoading(WebView view, WriteHandlingWebResourceRequest request) {
+         // works the same as WebViewClient.shouldOverrideUrlLoading, 
+         // but you have request.getAjaxData() which gives you the 
+         // request body
+         return WebResourceResponse(...) or return false or return true
+    }
+});
+```
+
+# What about other forms?
+
+The library can probably be extended to work for forms too. In fact, https://github.com/KeejOow/android-post-webview shows how it's done. However, I wasn't happy with my adaption of this, so I postponed it.
