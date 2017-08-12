@@ -31,5 +31,5 @@ which returns the data in the request body of the AJAX request.
 # Installation
 
  * Add the `writeinterceptingwebview` folder as a libarary module to your android project. 
- * (jCenter/Maven package is in the works)
+ * jCenter-Maven package will come as soon as I figure out how to do that ... Say what you want about pip, at least it's easy to upload a package.
  
