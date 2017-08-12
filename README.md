@@ -13,7 +13,7 @@ WebResourceResponse shouldInterceptRequest(android.webkit.WebView webview, WebRe
 
 Unfortunately, the `request` object passed to this method does not contain any POST data, wich is needed when proxying the request.
 
-This project provides a hack around this limitation by injecting into the HTML that intercepts AJAX calls.
+This project provides a hack around this limitation by injecting a script into the HTML that intercepts AJAX calls.
 
 It provides the `WriteHandlingWebViewClient` class that extends `WebViewClient` and provides the 
 ```
