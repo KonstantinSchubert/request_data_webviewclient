@@ -24,6 +24,10 @@ public class WriteHandlingWebViewClient extends WebViewClient {
         webView.addJavascriptInterface(ajaxInterface , "interception");
     }
 
+    /*
+    This here if the "fixed" shouldInterceptRequest method that you should override.
+    It receives a WriteHandlingWebResourceRequest instead of a WebResourceRequest.
+     */
     public WebResourceResponse shouldInterceptRequest(
             final WebView view,
             WriteHandlingWebResourceRequest request
@@ -44,9 +48,14 @@ public class WriteHandlingWebViewClient extends WebViewClient {
             uri = getOriginalRequestUri(request, MARKER);
         }
         WebResourceResponse webResourceResponse =  shouldInterceptRequest(
-                view, new WriteHandlingWebResourceRequest(request, requestBody, uri)
+                view,
+                new WriteHandlingWebResourceRequest(request, requestBody, uri)
         );
-        return injectIntercept(webResourceResponse, view.getContext());
+        if (webResourceResponse == null){
+            return webResourceResponse;
+        } else {
+            return injectIntercept(webResourceResponse, view.getContext());
+        }
     }
 
     void addAjaxRequest(String id, String body){
