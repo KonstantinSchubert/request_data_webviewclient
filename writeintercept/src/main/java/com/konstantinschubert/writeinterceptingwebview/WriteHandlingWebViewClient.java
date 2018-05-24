@@ -25,7 +25,7 @@ public class WriteHandlingWebViewClient extends WebViewClient {
     }
 
     /*
-    This here if the "fixed" shouldInterceptRequest method that you should override.
+    This here is the "fixed" shouldInterceptRequest method that you should override.
     It receives a WriteHandlingWebResourceRequest instead of a WebResourceRequest.
      */
     public WebResourceResponse shouldInterceptRequest(
